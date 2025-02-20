@@ -1,7 +1,7 @@
 import os
 
 # Nombre de fichiers à créer
-nombre_fichiers = 500  # Tu peux augmenter ce nombre si t'es chaud
+nombre_fichiers = 50000  # Tu peux augmenter ce nombre si t'es chaud
 
 # Dossier où les fichiers seront créés (ou sur le bureau si t'es flemmard)
 dossier = "chaos_total"
