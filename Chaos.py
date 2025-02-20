@@ -1,17 +1,23 @@
+
 import os
+import random
 
-# Nombre de fichiers à créer
-nombre_fichiers = 50000  # Tu peux augmenter ce nombre si t'es chaud
-
-# Dossier où les fichiers seront créés (ou sur le bureau si t'es flemmard)
-dossier = "chaos_total"
+# Dossier où les fichiers seront créés
+dossier = "apocalypse_stockage"
 if not os.path.exists(dossier):
     os.makedirs(dossier)
 
-# Boucle pour créer les fichiers
-for i in range(nombre_fichiers):
-    nom_fichier = os.path.join(dossier, f"fichier_malin_{i+1}.txt")
-    with open(nom_fichier, "w") as f:
-        f.write(f"Fichier numéro {i+1} - Tu t'attendais pas à ça, hein ?")
+# Nombre de fichiers à créer
+nombre_fichiers = 2 # Tu peux en mettre plus si t'es chaud
 
-print(f"Boom ! {nombre_fichiers} fichiers ont été créés dans '{dossier}'. Amuse-toi bien !")
+# Taille de chaque fichier en Go (oui, en gigaoctets !)
+taille_fichier_go = 1  # 1 Go par fichier, mais tu peux augmenter
+
+# Créer les fichiers
+for i in range(nombre_fichiers):
+    nom_fichier = os.path.join(dossier, f"monstre_{i+1}.bin")
+    with open(nom_fichier, "wb") as f:
+        # Remplir le fichier avec des données aléatoires
+        f.write(os.urandom(taille_fichier_go * 1024 * 1024 * 1024))  # Convertir en octets
+
+print(f"{nombre_fichiers} fichiers de {taille_fichier_go} Go ont été créés dans '{dossier}'. Ton stockage va souffrir !")
